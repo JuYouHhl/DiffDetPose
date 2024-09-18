@@ -15,6 +15,9 @@
       <a href="#Steps">Steps</a>
     </li>
     <li>
+      <a href="#Inference Demo">Inference Demo</a>
+    </li>   
+    <li>
       <a href="#Experimental Results">Experimental Results</a>
     </li>
   </ol>
@@ -58,7 +61,7 @@ python train_net.py --num-gpus 8 \
     --eval-only MODEL.WEIGHTS path/to/model.pth
 ```
 
-### Inference Demo with Pre-trained Models
+### Inference Demo
 We provide a command line tool to run a simple demo following [Detectron2](https://github.com/facebookresearch/detectron2/tree/main/demo#detectron2-demo).
 
 ```bash
