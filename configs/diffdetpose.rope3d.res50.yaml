@@ -1,0 +1,29 @@
+_BASE_: "Base-DiffusionDet.yaml"
+MODEL:
+  # WEIGHTS: "models/vovnet39_ese_detectron2.pth"
+  # WEIGHTS: "/mnt/c/1kimg-500noise-resnet50-rope_7train_3val/0202-k_500-detect/model_final.pth"
+  WEIGHTS: "models/all_k=50_model_final.pth"
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  DiffusionDet:
+    NUM_PROPOSALS: 500 # diffusion noise size
+    NUM_CLASSES: 10 # 2
+  MASK_ON: False
+  VOVNET:
+    CONV_BODY : "V-39-eSE"
+DATASETS:
+  TRAIN: ("rope3d_train",) # ("data/rope3d/rope3d_train.pkl",)
+  TEST:  ("rope3d_val",) # ("data/rope3d/rope3d_val.pkl",) 
+SOLVER:
+  GAMMA: 0.1
+  WARMUP_FACTOR: 0.001
+  WARMUP_ITERS: 200
+  WEIGHT_DECAY: 0.0001
+  BASE_LR: 0.0001
+  STEPS: (48000, 57000) #(23,27)
+  MAX_ITER: 63000 
+INPUT:
+  CROP:
+    ENABLED: True
+  FORMAT: "RGB"

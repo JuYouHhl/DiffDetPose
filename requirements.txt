@@ -1,0 +1,14 @@
+# pip intsall -U openmim
+# mmcvfull
+numpy==1.26.4
+fvcore
+tqdm
+opencv-python
+pycocotools
+matplotlib
+timm
+cloudpickle
+omegaconf
+scipy
+prettytable
+tensorboard
